@@ -1,5 +1,6 @@
 .tabs {
     font-size: 0;
+    width: 670px;
   }
   
   .tabs>input[type="radio"] {
