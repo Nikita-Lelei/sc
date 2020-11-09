@@ -3,26 +3,10 @@ window.onload = function load() {
 };
 
 var nodes = [{
-    x: 100,
-    y: 80,
-    linkedWith: [
-        1,
-        2,
-        3
-    ]
-}, {
-    x: 100,
+    x: 300,
     y: 300,
     linkedWith: []
-}, {
-    x: 300,
-    y: 400,
-    linkedWith: []
-},
-{
-    x: 500,
-    y: 400,
-    linkedWith: []
+
 }];
 
 function render() {
@@ -35,42 +19,81 @@ function render() {
 
 function connectNodes(node) {
     var context = document.getElementById('viewport').getContext('2d');
-    node.linkedWith.forEach(link => {
-        context.fillStyle = "#000";
-        context.lineWidth = 2;
-        context.beginPath();
-        context.moveTo(node.x, node.y);
-        context.lineTo(nodes[link].x, nodes[link].y);
-        context.stroke();
-    });
+        node.linkedWith.forEach(link => {
+            if (link == "") {
+                return false;
+            }
+            context.fillStyle = "#000";
+            context.lineWidth = 2;
+            context.beginPath();
+            context.moveTo(node.x, node.y);
+            context.lineTo(nodes[link].x, nodes[link].y);
+            context.stroke();
+        });
+   
 }
+//тут много странных костылей
+function checkInput(node) {
+    for (var i = 0; i < node.linkedWith.length; i++) {
+        if(isNaN(Number(node.linkedWith[i]))) {
+            alert("incorrect value");
+            return false;}
+        
+        if (node.linkedWith[i] >= nodes.length-1 || node.linkedWith[i] < 0) {
+            alert("incorrect value");
 
+            return false;
+        }
+
+    }
+    return true;
+}
 function createNode(node) {
     var context = document.getElementById('viewport').getContext('2d');
     var img = new Image();
-    connectNodes(node);
-    img.onload = function () {
-        context.drawImage(img, node.x - img.naturalWidth / 2, node.y - img.naturalHeight / 2);
+
+    if ( checkInput(node) !== false) {
+        connectNodes(node);
+        img.onload = function () {
+            context.drawImage(img, node.x - img.naturalWidth / 2, node.y - img.naturalHeight / 2);
+        }
+        
+        img.src = "images/" + nodes.indexOf(node) + ".png"
     }
-    img.src = "images/" + nodes.indexOf(node) + ".png"
+
+    else {
+        nodes.pop();
+    nodeCount--;
+    alphaAngle += 30;
+        return false;
+    }
 }
+
+var hypotenuse = 150;
+var nodeCount = 0;
+var alphaAngle = 160;
 
 function addNode() {
-    var canvas = document.getElementById('viewport');
-    var inputX = document.getElementById("inputX").value;
-    var inputY = document.getElementById("inputY").value;
+    //тут при помощи формулы нахождения катетов при гипотенузе и 
+    //углу идет расчет относительно каждой вершины на какое расстояние ее удалить от предыдущей
+    //вершины добавляются по принципу кругового расположения графа
     var inputLink = document.getElementById("inputLink").value.split(",");
+    var rad = alphaAngle * Math.PI / 180;
+    var catA = Math.cos(rad) * hypotenuse;
+    var catB = Math.sin(rad) * hypotenuse;
 
-    if (inputX >= 0 && inputX <= canvas.width &&
-        inputY >= 0 && inputY <= canvas.height) {
+    if (nodeCount < 10) {
         nodes.push({
-            x: inputX,
-            y: inputY,
+            x: nodes[nodeCount].x + catB,
+            y: nodes[nodeCount].y + catA,
             linkedWith: inputLink
         });
+        render();
+        alphaAngle -= 30;
+        nodeCount++;
     } else {
-        alert("Incorrect value");
+        return false;
     }
-    render();
 }
+
 
