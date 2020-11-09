@@ -1,0 +1,10 @@
+.content{
+    position: relative;
+    float: left;
+    margin: 0 10px;
+}
+ .menu{
+     position: relative;
+     float: left;
+     margin-left: 60px;
+ }
