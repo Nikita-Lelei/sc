@@ -24,7 +24,7 @@ class BinarySearchTree {
         }
     }
 
-    insertNode(node, newNode) {
+    insertNode(node, newNode,parent) {
         if (newNode.data < node.data) {
             if (node.left === null) {
                 node.left = newNode;
