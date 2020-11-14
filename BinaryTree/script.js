@@ -24,19 +24,19 @@ class BinarySearchTree {
         }
     }
 
-    insertNode(node, newNode,parent) {
+    insertNode(node, newNode) {
         if (newNode.data < node.data) {
             if (node.left === null) {
                 node.left = newNode;
             } else {
-                parent = node;
+                
                 this.insertNode(node.left, newNode);
             }
         } else {
             if (node.right === null) {
                 node.right = newNode;
             } else {
-                parent = node;
+       
                 this.insertNode(node.right, newNode);
             }
         }
