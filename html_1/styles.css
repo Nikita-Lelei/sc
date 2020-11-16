@@ -1,6 +1,6 @@
 .tabs {
     font-size: 0;
-    width: 670px;
+    width: max-content;
   }
   
   .tabs>input[type="radio"] {
@@ -12,7 +12,7 @@
     border: 1px solid #000000;
     padding: 10px 15px;
     font-size: 16px;
-    padding-bottom: 150px;
+    padding-bottom: 15px;
   }
   
   #firstTab:checked~#contentFirst,
@@ -103,14 +103,10 @@
 
 /*-------------------------------content----------------------------*/
 
-.crash-image{
-  position: fixed;
-  left:0px;
-  top: 0px;
-}
 .content {
     margin-top: 30px;
-    height: 410px;
+    padding-bottom: 20px;
+    min-height: 600px;
     border-bottom: 3px solid rgba(128, 128, 128, 0.5);
 }
 .content-menu {
@@ -131,16 +127,25 @@
     border-top: 1px solid;
     border-left: 1px solid;
 }
-.table__column {
-    width: 200px;
+#result td {
+  width: 40px;
     float: left;
     border-right: 1px solid;
     border-bottom: 1px solid;
     padding: 5px;
-    height: 20px;
+    height: 40px;
+   font-weight: 1000;
+}
+.table__column {
+    width: 80px;
+    float: left;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    padding: 5px;
+    height: 40px;
 }
 
-.table tbody :nth-child(1n) td {
+/* .table tbody :nth-child(1n) td {
     background-color: rgb(208,208,208);
   }
 .table__title{
@@ -151,9 +156,10 @@
 
   .table tbody :nth-child(2n) td {
     background-color: rgb(232,232,232);
-  }
+  } */
 
   /*-------------------------------footer----------------------------*/
+
 
   .footer__text {
       float: left;
