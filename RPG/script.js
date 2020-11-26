@@ -118,7 +118,6 @@ class Mage extends Human {
 
 async function fight(entityFirst, entitySecond) {
     return new Promise((resolve, reject) => {
-
         setTimeout(() => {
             var first = attackOrBlock();
             var second = attackOrBlock();
@@ -155,10 +154,10 @@ async function battle(first, second) {
 // максимальное ХП 200 (если больше будет установлено 200), урон и защита любая, аттрибут до 10 (если больше будет установлено 10)
 
 var warrior = new Warrior(200, 40, 30, 5);
-var archer = new Archer(100, 65, 10, 7);
+var archer = new Archer(100, 65, 10, 7);    
 var mage = new Mage(70, 80, 5, 9)
 
-battle(warrior, archer);
+battle(archer, mage);
 
 
 
