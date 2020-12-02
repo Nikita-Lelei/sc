@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\halla\\Desktop\\Новая папка\\ConsoleApp4\\OnlineStore.csproj": {}
+    "C:\\Users\\halla\\Desktop\\sc\\OnlineStore__Structure\\ConsoleApp4\\OnlineStore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\halla\\Desktop\\Новая папка\\ConsoleApp4\\OnlineStore.csproj": {
+    "C:\\Users\\halla\\Desktop\\sc\\OnlineStore__Structure\\ConsoleApp4\\OnlineStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\halla\\Desktop\\Новая папка\\ConsoleApp4\\OnlineStore.csproj",
+        "projectUniqueName": "C:\\Users\\halla\\Desktop\\sc\\OnlineStore__Structure\\ConsoleApp4\\OnlineStore.csproj",
         "projectName": "OnlineStore",
-        "projectPath": "C:\\Users\\halla\\Desktop\\Новая папка\\ConsoleApp4\\OnlineStore.csproj",
+        "projectPath": "C:\\Users\\halla\\Desktop\\sc\\OnlineStore__Structure\\ConsoleApp4\\OnlineStore.csproj",
         "packagesPath": "C:\\Users\\halla\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\halla\\Desktop\\Новая папка\\ConsoleApp4\\obj\\",
+        "outputPath": "C:\\Users\\halla\\Desktop\\sc\\OnlineStore__Structure\\ConsoleApp4\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -6,13 +6,13 @@ namespace OnlineStore
 {
     public static class OrderSystem
     {
-        private static Dictionary<Guid, Dictionary<int, int>> orders = new Dictionary<Guid, Dictionary<int, int>>();
+        private static Dictionary<Guid, string> orders = new Dictionary<Guid, string>();
 
-        public static bool AdjustStock(Dictionary<int, int> items)
+        public static bool AdjustStock(string item)
         {
             try
             {
-                var item = Catalogue.RemoveItems(items);
+                var product = Catalogue.RemoveItems(item);
                 return true;
             }
             catch (Exception)
@@ -26,9 +26,9 @@ namespace OnlineStore
         {
             try
             {
-                Dictionary<int, int> items;
-                orders.TryGetValue(payment.Id, out items);
-                var res = AdjustStock(items);
+              var item = Catalogue.item;
+                orders.TryGetValue(payment.Id, out item);
+                var res = AdjustStock(item);
                 if (!res)
                 {
                     return false;
@@ -43,12 +43,12 @@ namespace OnlineStore
             }
         }
 
-        public static bool ProcessOrder(Dictionary<int,int> itemIds)
+        public static bool ProcessOrder(string item)
         {
             var result = true;
             try
             {
-                orders.Add(new Guid(), itemIds);
+                orders.Add(new Guid(), item);
                 return result;
             }
             catch(Exception)

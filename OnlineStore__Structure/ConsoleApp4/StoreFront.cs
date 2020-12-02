@@ -6,19 +6,19 @@ namespace OnlineStore
 {
     public class StoreFront
     {
-        public Dictionary<int, int> GetCustomerCatalogue()
+        public string GetCustomerCatalogue()
         {
             return Catalogue.GetCatalogue(false);
         }
 
-        public Dictionary<int, int> GetAdminCatalogue()
+        public string GetAdminCatalogue()
         {
             return Catalogue.GetCatalogue(true);
         }
         
-        public bool ProcessOrder(Dictionary<int, int> itemIds)
+        public bool ProcessOrder(string item)
         {
-            return OrderSystem.ProcessOrder(itemIds);
+            return OrderSystem.ProcessOrder(item);
         }
     }
 }

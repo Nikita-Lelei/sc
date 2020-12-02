@@ -4,16 +4,16 @@ using System.Text;
 
 namespace OnlineStore
 {
-    public static class Catalogue
+    public class Catalogue
     {
-        public static Dictionary<int, int> items = new Dictionary<int, int>();
+        public static string item = "product name";
 
-        public static Dictionary<int, int> GetCatalogue(bool isAdmin)
+        public static string GetCatalogue(bool isAdmin)
         {
-            return items;
+            return item;
         }
 
-        public static bool RemoveItems(Dictionary<int,int> items) 
+        public static bool RemoveItems(string item) 
         {
             return true;
         }
