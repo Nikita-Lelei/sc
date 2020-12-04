@@ -1,0 +1,6 @@
+C:\Users\halla\Desktop\sc\Csharp tasks\Linked List\bin\Debug\Linked List.exe.config
+C:\Users\halla\Desktop\sc\Csharp tasks\Linked List\bin\Debug\Linked List.exe
+C:\Users\halla\Desktop\sc\Csharp tasks\Linked List\bin\Debug\Linked List.pdb
+C:\Users\halla\Desktop\sc\Csharp tasks\Linked List\obj\Debug\Linked List.csprojAssemblyReference.cache
+C:\Users\halla\Desktop\sc\Csharp tasks\Linked List\obj\Debug\Linked List.exe
+C:\Users\halla\Desktop\sc\Csharp tasks\Linked List\obj\Debug\Linked List.pdb

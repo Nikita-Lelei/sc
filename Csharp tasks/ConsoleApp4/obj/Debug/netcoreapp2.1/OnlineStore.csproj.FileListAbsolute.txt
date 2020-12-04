@@ -1,0 +1,10 @@
+C:\Users\halla\Desktop\sc\Csharp tasks\ConsoleApp4\bin\Debug\netcoreapp2.1\OnlineStore.deps.json
+C:\Users\halla\Desktop\sc\Csharp tasks\ConsoleApp4\bin\Debug\netcoreapp2.1\OnlineStore.runtimeconfig.json
+C:\Users\halla\Desktop\sc\Csharp tasks\ConsoleApp4\bin\Debug\netcoreapp2.1\OnlineStore.runtimeconfig.dev.json
+C:\Users\halla\Desktop\sc\Csharp tasks\ConsoleApp4\bin\Debug\netcoreapp2.1\OnlineStore.dll
+C:\Users\halla\Desktop\sc\Csharp tasks\ConsoleApp4\bin\Debug\netcoreapp2.1\OnlineStore.pdb
+C:\Users\halla\Desktop\sc\Csharp tasks\ConsoleApp4\obj\Debug\netcoreapp2.1\OnlineStore.csprojAssemblyReference.cache
+C:\Users\halla\Desktop\sc\Csharp tasks\ConsoleApp4\obj\Debug\netcoreapp2.1\OnlineStore.AssemblyInfoInputs.cache
+C:\Users\halla\Desktop\sc\Csharp tasks\ConsoleApp4\obj\Debug\netcoreapp2.1\OnlineStore.AssemblyInfo.cs
+C:\Users\halla\Desktop\sc\Csharp tasks\ConsoleApp4\obj\Debug\netcoreapp2.1\OnlineStore.dll
+C:\Users\halla\Desktop\sc\Csharp tasks\ConsoleApp4\obj\Debug\netcoreapp2.1\OnlineStore.pdb
