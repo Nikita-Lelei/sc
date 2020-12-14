@@ -4,3 +4,4 @@ C:\Users\halla\Desktop\sc\Csharp tasks\VernamCipher\bin\Debug\VernamCipher.pdb
 C:\Users\halla\Desktop\sc\Csharp tasks\VernamCipher\obj\Debug\VernamCipher.csprojAssemblyReference.cache
 C:\Users\halla\Desktop\sc\Csharp tasks\VernamCipher\obj\Debug\VernamCipher.exe
 C:\Users\halla\Desktop\sc\Csharp tasks\VernamCipher\obj\Debug\VernamCipher.pdb
+C:\Users\halla\Desktop\sc\Csharp tasks\VernamCipher\obj\Debug\VernamCipher.csproj.CoreCompileInputs.cache
