@@ -35,7 +35,7 @@ typeBill varchar(200)
 );
 
 create table Bill (
-id int primary key identity, --reference mistake: primary key + foreign key  
+id int primary key identity,
 number varchar(200),
 legalUser int 
 	foreign key (legalUser) references Account(id) 
