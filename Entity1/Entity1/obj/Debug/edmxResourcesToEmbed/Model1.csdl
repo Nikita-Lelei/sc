@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="usersModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="Update_Date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Adress" Relationship="Self.FK__Adress__legalUse__5165187F" FromRole="Account" ToRole="Adress" />
+    <NavigationProperty Name="Bill" Relationship="Self.FK__Bill__legalUser__4316F928" FromRole="Account" ToRole="Bill" />
+    <NavigationProperty Name="Contact" Relationship="Self.FK__Contact__legalUs__3A81B327" FromRole="Account" ToRole="Contact" />
+  </EntityType>
+  <EntityType Name="Adress">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="is_actual" Type="Boolean" />
+    <Property Name="adressType" Type="Int32" />
+    <Property Name="city" Type="Int32" />
+    <Property Name="individual" Type="Int32" />
+    <Property Name="legalUser" Type="Int32" />
+    <Property Name="street" Type="Int32" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="Update_Date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Account" Relationship="Self.FK__Adress__legalUse__5165187F" FromRole="Adress" ToRole="Account" />
+    <NavigationProperty Name="AdressType1" Relationship="Self.FK__Adress__adressTy__4E88ABD4" FromRole="Adress" ToRole="AdressType" />
+    <NavigationProperty Name="City1" Relationship="Self.FK__Adress__city__4F7CD00D" FromRole="Adress" ToRole="City" />
+    <NavigationProperty Name="Contact" Relationship="Self.FK__Adress__individu__5070F446" FromRole="Adress" ToRole="Contact" />
+    <NavigationProperty Name="Street1" Relationship="Self.FK__Adress__street__52593CB8" FromRole="Adress" ToRole="Street" />
+  </EntityType>
+  <EntityType Name="AdressType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="Update_Date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Adress" Relationship="Self.FK__Adress__adressTy__4E88ABD4" FromRole="AdressType" ToRole="Adress" />
+    <NavigationProperty Name="City" Relationship="Self.FK__City__adressType__48CFD27E" FromRole="AdressType" ToRole="City" />
+  </EntityType>
+  <EntityType Name="Bill">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="number" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="legalUser" Type="Int32" />
+    <Property Name="billType" Type="Int32" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="Update_Date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Account" Relationship="Self.FK__Bill__legalUser__4316F928" FromRole="Bill" ToRole="Account" />
+    <NavigationProperty Name="BillType1" Relationship="Self.FK__Bill__billType__440B1D61" FromRole="Bill" ToRole="BillType" />
+  </EntityType>
+  <EntityType Name="BillType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="typeBill" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="Update_Date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Bill" Relationship="Self.FK__Bill__billType__440B1D61" FromRole="BillType" ToRole="Bill" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adressType" Type="Int32" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="Update_Date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Adress" Relationship="Self.FK__Adress__city__4F7CD00D" FromRole="City" ToRole="Adress" />
+    <NavigationProperty Name="AdressType1" Relationship="Self.FK__City__adressType__48CFD27E" FromRole="City" ToRole="AdressType" />
+    <NavigationProperty Name="Street" Relationship="Self.FK__Street__city__4BAC3F29" FromRole="City" ToRole="Street" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContactSurname" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ContactName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="legalUser" Type="Int32" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="Update_Date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Account" Relationship="Self.FK__Contact__legalUs__3A81B327" FromRole="Contact" ToRole="Account" />
+    <NavigationProperty Name="Adress" Relationship="Self.FK__Adress__individu__5070F446" FromRole="Contact" ToRole="Adress" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__Users__individua__3E52440B" FromRole="Contact" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Street">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StreetName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="Int32" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="Update_Date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Adress" Relationship="Self.FK__Adress__street__52593CB8" FromRole="Street" ToRole="Adress" />
+    <NavigationProperty Name="City1" Relationship="Self.FK__Street__city__4BAC3F29" FromRole="Street" ToRole="City" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userLogin" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="userPassword" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="individual" Type="Int32" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="Update_Date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Contact" Relationship="Self.FK__Users__individua__3E52440B" FromRole="Users" ToRole="Contact" />
+  </EntityType>
+  <EntityType Name="AllUsers">
+    <Key>
+      <PropertyRef Name="EntityType" />
+    </Key>
+    <Property Name="EntityName" Type="String" MaxLength="401" FixedLength="false" Unicode="false" />
+    <Property Name="EntityType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Adress__legalUse__5165187F">
+    <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+    <End Role="Adress" Type="Self.Adress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Adress">
+        <PropertyRef Name="legalUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bill__legalUser__4316F928">
+    <End Role="Account" Type="Self.Account" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="legalUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Contact__legalUs__3A81B327">
+    <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+    <End Role="Contact" Type="Self.Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="legalUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Adress__adressTy__4E88ABD4">
+    <End Role="AdressType" Type="Self.AdressType" Multiplicity="0..1" />
+    <End Role="Adress" Type="Self.Adress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdressType">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Adress">
+        <PropertyRef Name="adressType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Adress__city__4F7CD00D">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Adress" Type="Self.Adress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Adress">
+        <PropertyRef Name="city" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Adress__individu__5070F446">
+    <End Role="Contact" Type="Self.Contact" Multiplicity="0..1" />
+    <End Role="Adress" Type="Self.Adress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Adress">
+        <PropertyRef Name="individual" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Adress__street__52593CB8">
+    <End Role="Street" Type="Self.Street" Multiplicity="0..1" />
+    <End Role="Adress" Type="Self.Adress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Street">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Adress">
+        <PropertyRef Name="street" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__City__adressType__48CFD27E">
+    <End Role="AdressType" Type="Self.AdressType" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdressType">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="adressType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bill__billType__440B1D61">
+    <End Role="BillType" Type="Self.BillType" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BillType">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="billType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Street__city__4BAC3F29">
+    <End Role="City" Type="Self.City" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Street" Type="Self.Street" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Street">
+        <PropertyRef Name="city" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Users__individua__3E52440B">
+    <End Role="Contact" Type="Self.Contact" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="individual" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="UserDB" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Account" EntityType="Self.Account" />
+    <EntitySet Name="Adress" EntityType="Self.Adress" />
+    <EntitySet Name="AdressType" EntityType="Self.AdressType" />
+    <EntitySet Name="Bill" EntityType="Self.Bill" />
+    <EntitySet Name="BillType" EntityType="Self.BillType" />
+    <EntitySet Name="City" EntityType="Self.City" />
+    <EntitySet Name="Contact" EntityType="Self.Contact" />
+    <EntitySet Name="Street" EntityType="Self.Street" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <EntitySet Name="AllUsers" EntityType="Self.AllUsers" />
+    <AssociationSet Name="FK__Adress__legalUse__5165187F" Association="Self.FK__Adress__legalUse__5165187F">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="Adress" EntitySet="Adress" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bill__legalUser__4316F928" Association="Self.FK__Bill__legalUser__4316F928">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="Bill" EntitySet="Bill" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Contact__legalUs__3A81B327" Association="Self.FK__Contact__legalUs__3A81B327">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="Contact" EntitySet="Contact" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Adress__adressTy__4E88ABD4" Association="Self.FK__Adress__adressTy__4E88ABD4">
+      <End Role="AdressType" EntitySet="AdressType" />
+      <End Role="Adress" EntitySet="Adress" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Adress__city__4F7CD00D" Association="Self.FK__Adress__city__4F7CD00D">
+      <End Role="City" EntitySet="City" />
+      <End Role="Adress" EntitySet="Adress" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Adress__individu__5070F446" Association="Self.FK__Adress__individu__5070F446">
+      <End Role="Contact" EntitySet="Contact" />
+      <End Role="Adress" EntitySet="Adress" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Adress__street__52593CB8" Association="Self.FK__Adress__street__52593CB8">
+      <End Role="Street" EntitySet="Street" />
+      <End Role="Adress" EntitySet="Adress" />
+    </AssociationSet>
+    <AssociationSet Name="FK__City__adressType__48CFD27E" Association="Self.FK__City__adressType__48CFD27E">
+      <End Role="AdressType" EntitySet="AdressType" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bill__billType__440B1D61" Association="Self.FK__Bill__billType__440B1D61">
+      <End Role="BillType" EntitySet="BillType" />
+      <End Role="Bill" EntitySet="Bill" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Street__city__4BAC3F29" Association="Self.FK__Street__city__4BAC3F29">
+      <End Role="City" EntitySet="City" />
+      <End Role="Street" EntitySet="Street" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Users__individua__3E52440B" Association="Self.FK__Users__individua__3E52440B">
+      <End Role="Contact" EntitySet="Contact" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
